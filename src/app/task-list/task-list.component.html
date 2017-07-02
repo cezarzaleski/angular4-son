@@ -7,7 +7,7 @@
 <button type="button" (click)="add()">Adicionar na lista</button>
 <ul>
   <li
-      *ngFor="let item of tasks">
+      *ngFor="let item of tasks" [myTask]="item">
     {{
         (item.name | lowercase) + ' - ' +
         (item.value | formatCurrency) + ' - ' +
