@@ -11,6 +11,8 @@ import { MyTaskDirective } from './my-task.directive';
 import { FormularioValidacaoComponent } from './formulario-validacao/formulario-validacao.component';
 import { TaskNewComponent } from './task-new/task-new.component';
 import {TaskService} from "./task.service";
+import { CepComponent } from './cep/cep.component';
+import {CepService} from "./cep.service";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import {TaskService} from "./task.service";
     FormatDatePipe,
     MyTaskDirective,
     FormularioValidacaoComponent,
-    TaskNewComponent
+    TaskNewComponent,
+    CepComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import {TaskService} from "./task.service";
     FormsModule
   ],
   providers: [
-      TaskService
+      TaskService,
+      CepService
   ],
   bootstrap: [AppComponent]
 })
