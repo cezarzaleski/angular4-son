@@ -1,0 +1,47 @@
+<p>
+  Validação de formulário angularr!
+</p>
+<div class="container">
+  <div class="row">
+      <form #myForm="ngForm">
+        <div class="form-group" [ngClass]="{'has-error': !name.valid && (name.dirty || name.touched)}">
+          <div class="col-md-12">
+            <label for="nome" class="control-label">Nome</label>
+            <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="nome" #name="ngModel" required="required">
+              <!--<div *ngIf="name.errors">-->
+                  <!--{{name.errors.required}}-->
+              <!--</div>-->
+              <span class="help-block" *ngIf="name.errors && (name.dirty || name.touched)">
+                  <ul>
+                      <li *ngIf="name.errors.required">
+                          O campo nome é requerido
+                      </li>
+                  </ul>
+              </span>
+          </div>
+        </div>
+
+      <div class="form-group" [ngClass]="{'has-error': !email.valid && (email.dirty || email.touched)}">
+          <div class="col-md-12">
+            <label for="email" class="control-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="emailModel"
+                   #email="ngModel" email required="required">
+              <span class="help-block" *ngIf="email.errors && (email.dirty || email.touched)">
+                  <ul>
+                      <li *ngIf="email.errors.required">
+                          O campo email é requerido
+                      </li>
+                      <li *ngIf="email.errors.email && !email.errors.required">
+                          O campo email é inválido
+                      </li>
+                  </ul>
+              </span>
+          </div>
+        </div>
+          <br/><br/><br/><br/>
+          <div class="col-md-12">
+              <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid">Enviar</button>
+          </div>
+      </form>
+  </div>
+</div>

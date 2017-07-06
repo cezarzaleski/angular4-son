@@ -8,6 +8,7 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { FormatCurrencyPipe } from './format-currency.pipe';
 import { FormatDatePipe } from './format-date.pipe';
 import { MyTaskDirective } from './my-task.directive';
+import { FormularioValidacaoComponent } from './formulario-validacao/formulario-validacao.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MyTaskDirective } from './my-task.directive';
     TaskListComponent,
     FormatCurrencyPipe,
     FormatDatePipe,
-    MyTaskDirective
+    MyTaskDirective,
+    FormularioValidacaoComponent
   ],
   imports: [
     BrowserModule,
