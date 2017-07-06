@@ -11,9 +11,9 @@ export class TaskListComponent implements OnInit {
 
   tasks:Array<Task>;
   constructor(private taskService: TaskService) {
-    this.taskService.tasks.push(
-        {name: 'testse', value: 50, date_launch: '2017-07-07'}
-        );
+    // this.taskService.tasks.push(
+    //     {name: 'testse', value: 50, date_launch: '2017-07-07'}
+    //     );
     this.tasks = this.taskService.tasks;
 
   }
