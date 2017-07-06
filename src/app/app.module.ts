@@ -9,6 +9,8 @@ import { FormatCurrencyPipe } from './format-currency.pipe';
 import { FormatDatePipe } from './format-date.pipe';
 import { MyTaskDirective } from './my-task.directive';
 import { FormularioValidacaoComponent } from './formulario-validacao/formulario-validacao.component';
+import { TaskNewComponent } from './task-new/task-new.component';
+import {TaskService} from "./task.service";
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { FormularioValidacaoComponent } from './formulario-validacao/formulario-
     FormatCurrencyPipe,
     FormatDatePipe,
     MyTaskDirective,
-    FormularioValidacaoComponent
+    FormularioValidacaoComponent,
+    TaskNewComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,9 @@ import { FormularioValidacaoComponent } from './formulario-validacao/formulario-
     HttpModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+      TaskService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

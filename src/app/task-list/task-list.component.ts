@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Task} from "../task";
+import {TaskService} from "../task.service";
 
 @Component({
   selector: 'app-task-list',
@@ -8,21 +9,20 @@ import {Task} from "../task";
 })
 export class TaskListComponent implements OnInit {
 
-  constructor() { }
+  tasks:Array<Task>;
+  constructor(private taskService: TaskService) {
+    this.taskService.tasks.push(
+        {name: 'testse', value: 50, date_launch: '2017-07-07'}
+        );
+    this.tasks = this.taskService.tasks;
+
+  }
+
 
   ngOnInit() {
   }
+  // @Input()
+  // tasks = [];
 
-  tasks = [];
-  task:Task = {
-    name: '',
-    value: 0,
-    date_launch: '2017-07-07'
-  };
-  add() {
-    let task = Object.assign({}, this.task);
-    this.tasks.push(task);
-
-  }
 
 }

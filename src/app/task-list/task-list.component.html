@@ -1,10 +1,3 @@
-<label>Nome:</label>
-<input type="text" [(ngModel)]="task.name">
-<label>Value</label>
-<input type="text" [(ngModel)]="task.value">
-<label>Value</label>
-<input type="text" [(ngModel)]="task.date_launch">
-<button type="button" (click)="add()">Adicionar na lista</button>
 <ul>
   <li
       *ngFor="let item of tasks" [myTask]="item">
